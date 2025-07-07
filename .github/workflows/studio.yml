@@ -56,7 +56,8 @@ jobs:
           cache: ${{ steps.pkgman.outputs.cache }}
 
       - name: Install dependencies
-        run: ${{ steps.pkgman.outputs.package_manager }} install
+        run: pnpm approve-builds
+          ${{ steps.pkgman.outputs.package_manager }} install
 
       - name: Generate
         run: ${{ steps.pkgman.outputs.package_manager }} run build
