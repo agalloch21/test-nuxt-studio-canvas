@@ -58,9 +58,6 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.pkgman.outputs.package_manager }} install
 
-      - name: Approve builds
-        run: pnpm approve-builds
-
       - name: Generate
         run: ${{ steps.pkgman.outputs.package_manager }} run build
         env:
