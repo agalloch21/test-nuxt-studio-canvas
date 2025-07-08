@@ -57,6 +57,9 @@ jobs:
 
       - name: Install dependencies
         run: ${{ steps.pkgman.outputs.package_manager }} install
+        env:
+          NUXT_CONTENT_DATABASE_DRIVER: better-sqlite3
+          npm_config_yes: true
 
       - name: Generate
         run: ${{ steps.pkgman.outputs.package_manager }} run build
